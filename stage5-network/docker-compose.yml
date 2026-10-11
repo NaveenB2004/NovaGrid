@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  network-segment:
+    build: .
+    container_name: network-segment
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    restart: unless-stopped
+    # NOTE: edit vsftpd.conf's pasv_address to the VM's real host-only IP
+    # before building, or passive-mode FTP transfers will fail for
+    # players connecting from a separate attacker VM.

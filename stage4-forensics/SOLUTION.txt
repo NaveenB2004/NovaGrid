@@ -1,0 +1,5 @@
+Stage 4 REAL flag: NOVA{d3l37ed_but_no7_01dm_gon3}  (recovered from REAL~1.TXT)
+Stage 4 DECOY flag: NOVA{clos3_bu7_5tth_wr0ng_tim3stamp}  (recovered from TEMP~1.TXT, NOT the answer)
+Real completion timestamp: 2026-01-14 02:03:00 - matches the cron job 4471 window (01:58:02-02:04:12) documented in access.log
+Decoy timestamp: 2026-01-13 20:00:00 - explicitly logged as unrelated manual troubleshooting, six hours before the job window
+Recovery method: mount/scan endpoint.img with a carving tool (e.g. `photorec` or `strings -a endpoint.img | grep NOVA`) to find both flag-shaped strings, then use access.log to determine which one falls inside the documented cleanup job window.

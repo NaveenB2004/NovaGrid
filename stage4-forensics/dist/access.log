@@ -1,0 +1,6 @@
+2026-01-14 01:58:02 svc[cron]: starting scheduled cleanup job (job_id=4471)
+2026-01-14 01:58:03 svc[cron]: cleanup job 4471 acquired lock
+2026-01-14 02:03:00 svc[cleanup]: wrote completion marker REAL~1.TXT
+2026-01-14 02:04:11 svc[cron]: cleanup job 4471 finished, lock released
+2026-01-14 02:04:12 svc[cron]: next run scheduled for 2026-01-15 02:00:00
+2026-01-13 20:00:00 user[arivera]: manual test file TEMP~1.TXT created during troubleshooting (unrelated to cron job 4471)

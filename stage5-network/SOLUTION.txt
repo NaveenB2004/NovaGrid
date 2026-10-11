@@ -1,0 +1,6 @@
+Stage 5 flag: NOVA{tunn3l3d_6tt_7hr0ugh_dn5}
+Passphrase (also the zip password): swjp7bwjj8dk
+Base32 of passphrase (as seen split across DNS labels): ON3WU4BXMJ3WU2RYMRVQ
+pcap: /home/claude/shadowledger/stage5-network/dist/breach_capture.pcap
+Protected archive: /home/claude/shadowledger/stage5-network/ftp_share/backup.zip (served via anonymous FTP)
+Solve: filter the pcap for DNS queries to *.novagrid-internal.net, concatenate the subdomain labels in capture-time order, Base32-decode the result to recover the passphrase, nmap the live segment to find the anonymous FTP server, download backup.zip, and unzip it with the recovered passphrase.
