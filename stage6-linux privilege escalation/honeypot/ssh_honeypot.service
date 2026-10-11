@@ -1,0 +1,15 @@
+[Unit]
+Description=SSH Honeypot (CTF box - logs attacker credential attempts)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/sbin/ssh_honeypot.py
+Restart=on-failure
+# Runs as root only because binding <1024 ports / reading the host key
+# requires it in this minimal setup; the service itself never spawns a
+# real shell for any connecting client.
+User=root
+
+[Install]
+WantedBy=multi-user.target

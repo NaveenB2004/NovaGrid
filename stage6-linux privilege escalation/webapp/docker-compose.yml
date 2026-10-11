@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  internalops:
+    build: .
+    container_name: internalops
+    ports:
+      # Deliberately non-standard/high port so a default top-1000
+      # nmap scan misses it and a full -p- scan is required.
+      - "58421:5000"
+    restart: unless-stopped

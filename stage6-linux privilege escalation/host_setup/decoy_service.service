@@ -1,0 +1,12 @@
+[Unit]
+Description=Legacy Ops Admin (decoy service - CTF red herring)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/sbin/decoy_service.py
+Restart=on-failure
+User=nobody
+
+[Install]
+WantedBy=multi-user.target

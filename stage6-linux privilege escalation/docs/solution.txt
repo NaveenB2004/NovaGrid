@@ -1,0 +1,6 @@
+---------------------------------------------
+Setup complete.
+user2 password : R3plicate_This_2026!
+user.txt       : flag{460487d757988fd760cb9c3f6234ad3f}
+root.txt       : flag{a5a821815dac0543a1969dd6afce9461}
+(keep this output for your grading/solution notes only)
