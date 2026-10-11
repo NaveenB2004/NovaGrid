@@ -1,0 +1,34 @@
+=== Operation ShadowLedger - Consolidated Answer Key ===
+Generated: Sun Sep 20 08:15:26 AM UTC 2026
+
+--- stage1-osint ---
+Stage 1 flag: NOVA{kn3m_public_7ra1l}
+Fragment locations: public-records.html hidden text (record_ref_kn3m, oldest/2021) -> profile.jpg EXIF Artist field (nova_recruit_public, middle) -> profile.html HTML comment (7ra1l, newest/Jan 2026)
+Ordering clue for players: assemble fragments oldest-to-newest using the dates visible on each page (business registration 2021-03-15 is oldest; the pinned post Jan 2026 is newest) to get NOVA{kn3m_public_7ra1l}
+
+--- stage2-stego ---
+Stage 2 flag: NOVA{m0re_than_m3375_i7zn_7he_ey3}
+Passphrase: novagrid2024
+Extraction: steghide extract -sf /home/shadow_ledger/shadowledger/stage2-stego/dist/memo_backup.jpg -p novagrid2024
+
+--- stage3-crypto ---
+Stage 3 flag: NOVA{gtax_cus7om_cryp70_f4il5}
+Oracle key: N0v4Gr1dSecretKey2024!
+Challenge file: /home/shadow_ledger/shadowledger/stage3-crypto/dist/memo.txt.enc (base64 of XOR(plaintext, key))
+Solve: query the oracle with a long, mostly-repeating plaintext (e.g. 40 'A' characters) to recover the keystream via XOR differential analysis against known plaintext, reconstruct the key, then XOR-decrypt the base64-decoded memo file with that key.
+
+--- stage4-forensics ---
+Stage 4 REAL flag: NOVA{del3t3d_bu7_koc_n0t_g0n3}  (recovered from REAL~1.TXT)
+Stage 4 DECOY flag: NOVA{the_vfkc_wr0ng_c0mpl3tion_m4rker}  (recovered from TEMP~1.TXT, NOT the answer)
+Real completion timestamp: 2026-01-14 02:03:00 - matches the cron job 4471 window (01:58:02-02:04:12) documented in access.log
+Decoy timestamp: 2026-01-13 20:00:00 - explicitly logged as unrelated manual troubleshooting, six hours before the job window
+Recovery method: mount/scan endpoint.img with a carving tool (e.g. `photorec` or `strings -a endpoint.img | grep NOVA`) to find both flag-shaped strings, then use access.log to determine which one falls inside the documented cleanup job window.
+
+--- stage5-network ---
+Stage 5 flag: NOVA{7h3_traffic_n3ver_li3s_gu94}
+Passphrase (also the zip password): w4573m2wn350
+Base32 of passphrase (as seen split across DNS labels): O42DKNZTNUZHO3RTGUYA
+pcap: /home/shadow_ledger/shadowledger/stage5-network/dist/breach_capture.pcap
+Protected archive: /home/shadow_ledger/shadowledger/stage5-network/ftp_share/backup.zip (served via anonymous FTP)
+Solve: filter the pcap for DNS queries to *.novagrid-internal.net, concatenate the subdomain labels in capture-time order, Base32-decode the result to recover the passphrase, nmap the live segment to find the anonymous FTP server, download backup.zip, and unzip it with the recovered passphrase.
+
