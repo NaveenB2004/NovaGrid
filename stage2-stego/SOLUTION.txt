@@ -1,0 +1,3 @@
+Stage 2 flag: NOVA{p1xel5_6wu_d0nt_l1e}
+Passphrase: novagrid2024
+Extraction: steghide extract -sf /home/ubuntu/shadowledger/stage2-stego/dist/memo_backup.jpg -p novagrid2024

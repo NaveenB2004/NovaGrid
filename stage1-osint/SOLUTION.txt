@@ -1,0 +1,3 @@
+Stage 1 flag: NOVA{mzcr_publ1c_7ra1l}
+Fragment locations: public-records.html hidden text (record_ref_mzcr, oldest/2021) -> profile.jpg EXIF Artist field (nova_recruit_publ1c, middle) -> profile.html HTML comment (7ra1l, newest/Jan 2026)
+Ordering clue for players: assemble fragments oldest-to-newest using the dates visible on each page (business registration 2021-03-15 is oldest; the pinned post Jan 2026 is newest) to get NOVA{mzcr_publ1c_7ra1l}

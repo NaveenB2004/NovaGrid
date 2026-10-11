@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  crypto-oracle:
+    build: .
+    container_name: crypto-oracle
+    ports:
+      - "4433:4433"
+    restart: unless-stopped

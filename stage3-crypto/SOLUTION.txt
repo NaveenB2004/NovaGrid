@@ -1,0 +1,4 @@
+Stage 3 flag: NOVA{cu5tom_cryp7o_pwqd_f4il5}
+Oracle key: N0v4Gr1dSecretKey2024!
+Challenge file: /home/ubuntu/shadowledger/stage3-crypto/dist/memo.txt.enc (base64 of XOR(plaintext, key))
+Solve: query the oracle with a long, mostly-repeating plaintext (e.g. 40 'A' characters) to recover the keystream via XOR differential analysis against known plaintext, reconstruct the key, then XOR-decrypt the base64-decoded memo file with that key.
